@@ -8,7 +8,7 @@ title: 资源收集
 
 
 
-```
+```javascript
 //es5继承
 //构造函数
 function Person(name){

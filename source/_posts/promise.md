@@ -9,7 +9,7 @@ title: promise
 - http://liubin.org/promises-book/#what-is-promise
 
 
-```
+```JavaScript
 // promise 连式结构
 function asy() {
     return new Promise(function (resolve, reject) {
