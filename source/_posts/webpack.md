@@ -46,6 +46,41 @@ html-webpack-plugin-after-emit
 > Webpack-dev-server十分小巧，这里的作用是用来伺服资源文件，不能替代后端的服务器，因此如果你还要进行后端开发，就要采用双服务器模式：一个后端服务器和一个资源服务器（即Webpack-dev-server)
 > 参考 http://www.jianshu.com/p/8adf4c2bfa51
 
+
+```javascript
+module.exports={
+    entry:{
+        bundle:[ "./src/app.js"]
+    },
+    output:{
+        path:__dirname,
+        publicPath:"/",
+        filename:"dist/[name].js"
+    },
+    module:{
+        loaders:[
+            {test: /\.html$/, loaders: ['html']},
+            {test: /(\.js)$/, loader:["babel"] ,exclude:/node_modules/,
+             query:{
+                    presets:["es2015"]
+             }
+            }
+        ]
+    },
+    resolve:{
+    },
+    plugins:[
+         /*
+         new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+               */
+    ]
+}
+```
+
 ```javascript
 var path = require("path");
 module.exports = {
