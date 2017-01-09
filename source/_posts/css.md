@@ -29,3 +29,32 @@ title: css相关
 <!-- rem	CSS3	无	CSS3 长度单位 rem ，相对于根元素(即html元素)font-size计算值的倍数
 vw	CSS3	无	CSS3 长度单位 vw，相对于视口的宽度。视口被均分为100单位的vw
 vh	CSS3	无	CSS3 长度单位 vh ，相对于视口的高度。视口被均分为100单位的vh -->
+
+
+### flex兼容
+```css
+.flex() {
+    display: -webkit-box; 
+    display: -moz-box; 
+    display:-webkit-flex;
+    display: -ms-flexbox;
+    display:flex;
+
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex-one{
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    width: 20%;               /* For old syntax, otherwise collapses. */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+```
